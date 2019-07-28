@@ -10,6 +10,11 @@ This repository is broken into a few different directories, namely scripts and c
 
 `textile.service` is a basic systemd service to start a textile node
 
+`textile_watcher.service` is a basic systemd service to restart a textile node whenever it goes offline
+
+* Starts after `textile.service`
+* Whenever shutting down a textile node, the recommended way is to do `sudo systemctl stop textile_watcher && sudo systemctl stop textile`
+
 ## Configs (zabbix)
 
 `textile_template.xml` is a zabbix template and does the following:
@@ -42,3 +47,5 @@ This repository is broken into a few different directories, namely scripts and c
 * Retrieve peer count
 * Retrieve daemon status
 * Retrieve thread count
+
+`textile_watcher.sh` is a script used to restart a textile node whenever it goes offline

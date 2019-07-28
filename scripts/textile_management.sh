@@ -2,13 +2,18 @@
 
 # go-textile management script for common administrative tasks
 
-COMMANDS="daemon | set-display-name | set-avatar-image | account-sync | add-contact-address | delete-contact | thread-invite | create-client-token | delete-client-token | get-profile"
+COMMANDS="daemon | stop-daemon | set-display-name | set-avatar-image | account-sync | add-contact-address | delete-contact | thread-invite | create-client-token | delete-client-token | get-profile"
 
 case "$1" in
 
     daemon)
         # starts textile daemon serving the docs
         textile daemon --serve-docs
+        ;;
+    stop-daemon)
+        # stops textile daemon after stoping the watcher
+        sudo systemctl stop textile_watcher || exit
+        sudo systemctl stop textile || exit
         ;;
     set-display-name)
         # set peer display name
