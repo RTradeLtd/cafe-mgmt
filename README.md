@@ -10,7 +10,7 @@ This repository is broken into a few different directories, namely scripts and c
 
 `textile.service` is a basic systemd service to start a textile node
 
-## Configs(zabbix)
+## Configs (zabbix)
 
 `textile_template.xml` is a zabbix template and does the following:
 
