@@ -71,8 +71,3 @@ echo "[INFO] initializing cafe"
 textile init --cafe --cafe-open --server "$ACCOUNT"
 error_handle
 echo "[INFO] initialized cafe"
-
-echo "[INFO] setting display name"
-textile profile set --name="$DISPLAY_NAME"
-error_handle
-echo "[INFO] set display name"
