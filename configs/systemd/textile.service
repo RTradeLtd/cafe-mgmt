@@ -1,0 +1,13 @@
+[Unit]
+Description=Starts the textile daemon
+After=network.target
+
+[Service]
+User=textile
+Group=textile
+Type=simple
+PIDFile=/var/run/textile_daemon.pid
+ExecStart=/boot_scripts/textile_management.sh daemon
+
+[Install]
+WantedBy=multi-user.target
