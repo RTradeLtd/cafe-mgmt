@@ -2,7 +2,7 @@
 
 # go-textile management script for common administrative tasks
 
-COMMANDS="daemon | set-display-name | set-avatar-image | account-sync | add-contact-address | delete-contact | thread-invite | create-client-token | get-profile"
+COMMANDS="daemon | set-display-name | set-avatar-image | account-sync | add-contact-address | delete-contact | thread-invite | create-client-token | delete-client-token | get-profile"
 
 case "$1" in
 
@@ -49,6 +49,12 @@ case "$1" in
     create-client-token)
         # creates a client cafe token
         textile tokens create
+        ;;
+    delete-client-token)
+        # dletes a client cafe token
+        echo "enter token to delete"
+        read -r TOKEN
+        textile tokens delete "$TOKEN"
         ;;
     get-profile)
         # gets profile
