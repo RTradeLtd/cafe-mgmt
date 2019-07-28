@@ -1,11 +1,15 @@
 #! /bin/bash
 
-COMMANDS="peer-count | daemon-status"
+COMMANDS="peer-count | thread-count | daemon-status"
 
 case "$1" in
 
     peer-count)
         COUNT=$(textile ipfs swarm peers | grep -c addr)
+        echo "$COUNT"
+        ;;
+    thread-count)
+        COUNT=$(textile threads | jq '.items | length')
         echo "$COUNT"
         ;;
     daemon-status)
