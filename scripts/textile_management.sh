@@ -2,10 +2,14 @@
 
 # go-textile management script for common administrative tasks
 
-COMMANDS="set-display-name | set-avatar-image | account-sync | add-contact-address | delete-contact | thread-invite | create-client-token | get-profile"
+COMMANDS="daemon | set-display-name | set-avatar-image | account-sync | add-contact-address | delete-contact | thread-invite | create-client-token | get-profile"
 
 case "$1" in
 
+    daemon)
+        # starts textile daemon serving the docs
+        textile daemon --serve-docs
+        ;;
     set-display-name)
         # set peer display name
         echo "enter display name"

@@ -1,6 +1,10 @@
 #! /bin/bash
 
-# downloads and install a go-textile node
+# prepares a textile node installation for production servers
+# installs zabbix-agent for monitoring
+# installs go-textile
+# creates a wallet (account)
+# initializes a cafe
 
 #########
 # SETUP #
