@@ -32,7 +32,14 @@ if [[ "$DISPLAY_NAME" == "" ]]; then
     DISPLAY_NAME=$(hostname)
 fi
 
-echo "[INFO downloading go-textile"
+echo "[INFO downloading zabbix"
+wget https://repo.zabbix.com/zabbix/4.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.0-2+bionic_all.deb
+sudo dpkg -i zabbix-release_4.0-2+bionic_all.deb
+sudo apt update 
+sudo apt install zabbix-agent
+rm zabbix-release_4.0-2+bionic_all.deb
+
+echo "[INFO] downloading go-textile"
 # download go-textile
 wget "$URL"
 error_handle
