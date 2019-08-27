@@ -6,6 +6,7 @@ After=network.target
 User=textile
 Group=textile
 Type=simple
+LimitNOFILE=16384
 PIDFile=/var/run/textile_daemon.pid
 ExecStart=/boot_scripts/textile_management.sh daemon
 
